@@ -1,10 +1,13 @@
 Electricity Demand and Price Forecasting
+
 This project focuses on developing accurate predictions for electricity demand and pricing using a multivariate time series forecasting approach. By integrating energy consumption and weather data from multiple cities in Spain, the project tackles challenges in the energy sector, leveraging advanced forecasting methodologies to enhance decision-making.
 Objective
 The aim is to predict electricity demand and pricing by utilizing a comprehensive dataset comprising energy and weather data. This project explores the relationship between weather metrics and energy consumption, identifying patterns and trends to enhance forecasting accuracy. The work also seeks to improve existing 24-hour forecasts provided by the Transmission System Operator (TSO) for electricity demand and pricing.
 Objective
 The aim is to predict electricity demand and pricing by utilizing a comprehensive dataset comprising energy and weather data. This project explores the relationship between weather metrics and energy consumption, identifying patterns and trends to enhance forecasting accuracy. The work also seeks to improve existing 24-hour forecasts provided by the Transmission System Operator (TSO) for electricity demand and pricing.
+
 Methodology
+
 The project follows a structured approach:
 
 1. Data Integration and Exploration
