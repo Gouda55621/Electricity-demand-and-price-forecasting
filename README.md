@@ -1,58 +1,44 @@
-Objective:
-The focal point of this project revolves around time series forecasting, encompassing the integration of two separate datasets comprising energy and weather data. By amalgamating energy consumption and weather-related metrics from multiple cities in Spain, the project endeavors to tackle a multivariate time series forecasting challenge.
+Electricity Demand and Price Forecasting
+This project focuses on developing accurate predictions for electricity demand and pricing using a multivariate time series forecasting approach. By integrating energy consumption and weather data from multiple cities in Spain, the project tackles challenges in the energy sector, leveraging advanced forecasting methodologies to enhance decision-making.
+Objective
+The aim is to predict electricity demand and pricing by utilizing a comprehensive dataset comprising energy and weather data. This project explores the relationship between weather metrics and energy consumption, identifying patterns and trends to enhance forecasting accuracy. The work also seeks to improve existing 24-hour forecasts provided by the Transmission System Operator (TSO) for electricity demand and pricing.
+Objective
+The aim is to predict electricity demand and pricing by utilizing a comprehensive dataset comprising energy and weather data. This project explores the relationship between weather metrics and energy consumption, identifying patterns and trends to enhance forecasting accuracy. The work also seeks to improve existing 24-hour forecasts provided by the Transmission System Operator (TSO) for electricity demand and pricing.
+Methodology
+The project follows a structured approach:
 
-The project employs a diverse array of forecasting models, including the XGboost Regressor, GRU (Gated Recurrent Unit), LSTM (Long Short-Term Memory), CNN (Convolutional Neural Network), CNN-LSTM, and LSTM-Attention. Additionally, hybrid models like GRU-XGBoost and LSTM-Attention-XGBoost are employed, harnessing the strength of multiple techniques through ensembling.
+1. Data Integration and Exploration
+Combine energy consumption, pricing, and weather data to create a multivariate dataset.
+Use exploratory data analysis (EDA) to understand relationships and feature importance.
+2. Preprocessing
+Clean the data by handling null values and extracting features like hour, weekday, month, and year.
+Check stationarity using the Dickey-Fuller test.
+Normalize and reshape data for model training.
+3. Model Development
+Various forecasting models are implemented to predict electricity demand and pricing:
 
-Overall, this project seeks to harness the power of these forecasting methodologies to derive accurate predictions for electricity demand and pricing in a time-dependent context, thereby contributing to the advancement of energy forecasting and enhancing decision-making within the energy sector.
+Machine Learning Models:
+XGBoost Regressor
+Deep Learning Models:
+GRU, LSTM, CNN, CNN-LSTM, LSTM-Attention
+Hybrid Models:
+GRU-XGBoost, LSTM-Attention-XGBoost
+4. Model Evaluation
+Assess performance using Mean Absolute Error (MAE) for training and validation.
+Compare model accuracy to identify the best-performing approaches.
+Dataset Highlights
+The dataset combines four years of data from:
 
-About the Dataset:
-The energy consumption and weather data from various cities in Spain are combined to create a multivariate time series forecasting problem. The energy dataset contains features related to the generation of energy from different sources like fossil fuels, wind, and coal. On the other hand, the weather dataset contains features related to various weather metrics such as temperature, humidity, pressure, wind speed, etc.
+Energy Metrics: Electricity consumption, pricing, and generation data from sources like fossil fuels, wind, and coal.
+Weather Metrics: Temperature, humidity, pressure, wind speed, etc.
+Data Sources:
 
-The dataset includes a four-year record of weather data https://openweathermap.org/api electrical consumption, pricing, and generation data for Spain ENTOSE website . The public ENTSOE portal was used to retrieve the consumption and generation data, while the Spanish TSO Red Electric España was used to obtain the settlement prices TSO website.
-
-Method
-The code consists of 4 main parts:
-
-Data loading and feature exploartion: This part uses os and pandas to load, process the data into a dataframe, plotting correlation matrix on both the dataset.
-Preprocessing: Involves getting rid of Null values, selecting features required hour,weekday, month, year from the data and plotting visualization, followed by normalizing and reshaping the data follwed by using The Dickey-Fuller test to check if thr data us stationary
-Model building and training: This part using PCA to select the features necessary,normalizing target variables and then building forecasting models With XGBoost, GRU, LSTM, CNN, CNN-LSTM,LSTM attention, GRU-XGboost, LSTM attention-XGboost.
-We plot the train an validation Mean Absolute Error for each case and also compare the scores across the different models towards the end.
-image
-
+Weather data: OpenWeather API
+Energy data: ENTSOE Portal
+Pricing data: Spanish TSO Red Electric España
 Requirements
-To run the code, you need to install the following libraries:
+To execute the project, the following libraries are required:
 
-matplotlib
-Numpy, panda, math
-Seaborn
-Xgboost
-Tensorflow
-keras
-Scikit Learn
-Motivation:
-This dataset stands out due to its comprehensive hourly data on electrical consumption, along with the corresponding forecasts provided by the TSO for consumption and pricing. This unique combination allows for a valuable opportunity to compare prospective forecasts against the current state-of-the-art industry predictions.
-
-The dataset opens up a realm of intriguing questions that can be explored:
-
-Load and Marginal Supply Curves: The project aims to analyze and visualize how the load and marginal supply curves manifest based on the dataset's information.
-
-Weather Impact on Electrical Demand, Prices, and Generation: Through detailed analysis, the project will identify which weather measurements and cities exert the most significant influence on electrical demand, pricing, and generation capacity.
-
-Enhancing TSO's 24-Hour Forecast: The project seeks to improve upon the accuracy of the TSO's 24-hour advance forecast for electrical consumption and pricing.
-
-Time-of-Day Electrical Price Prediction: Can the project achieve more precise predictions of electrical price based on different times of the day compared to the TSO's forecasts?
-
-Intraday Price and Electrical Demand Forecasting: By utilizing the dataset's rich hourly data, the project endeavors to develop hour-by-hour forecasts for intraday price and electrical demand.
-
-Models used in this project :
-1. Machine learning :
-XGboost Regressor
-2. Deep learning/Stacked models :
-GRU
-LSTM
-CNN
-CNN-LSTM
-LSTM-Attention
-3. Hybrid methods:
-GRU-XGBoost
-LSTM-Attention-XGBoost
+General Libraries: pandas, numpy, matplotlib, seaborn, math
+Machine Learning: XGBoost, scikit-learn
+Deep Learning: TensorFlow, Keras
